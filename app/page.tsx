@@ -11,6 +11,11 @@
 import type { VoteProps } from "@/lib/utils";
 
 /**
+ * Import _AppShell
+ */
+import _AppShell from '../components/_appshell';
+
+/**
  * Custom Function: load_data()
  * 
  * Load data from the API, a hosted instance of Pocketbase.
@@ -35,5 +40,11 @@ export default async function Page() {
 
   console.log(data);
 
-  return;
+  return(
+    <>
+      <_AppShell>
+        <p>something</p>
+      </_AppShell>
+    </>
+  );
 }
