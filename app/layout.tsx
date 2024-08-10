@@ -4,9 +4,9 @@
  * Link: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
  */
 
-import type { Metadata } from "next";
-
 import '@mantine/core/styles.css';
+
+import type { Metadata } from 'next';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
@@ -22,10 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript defaultColorScheme="auto" />
+        <ColorSchemeScript defaultColorScheme="light" />
       </head>
       <body>
-        <MantineProvider defaultColorScheme="auto">
+        <MantineProvider defaultColorScheme="light">
           {children}
         </MantineProvider>
       </body>

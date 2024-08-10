@@ -8,12 +8,12 @@
  * Import single item props: VoteProps
  */
 
-import type { VoteProps } from "@/lib/utils";
+import type { VoteProps } from '@/lib/utils';
 
 /**
  * Import _AppShell
  */
-import _AppShell from '../components/_appshell';
+import _AppShell from '../components/_AppShell';
 
 /**
  * Custom Function: load_data()
