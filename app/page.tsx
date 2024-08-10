@@ -9,6 +9,8 @@
  */
 
 import type { VoteProps } from '@/lib/utils';
+import Mosaic from "@/components/custom/mosaic";
+
 
 /**
  * Import _AppShell
@@ -23,6 +25,7 @@ import _AppShell from '../components/_AppShell';
 
 async function load_data() {
   const res: any = await fetch(`${process.env.API_URL}`);
+  
  
   if (!res.ok) {
     throw new Error('Failed to fetch data');
@@ -37,13 +40,13 @@ async function load_data() {
 
 export default async function Page() {
   const data: { page: number, perPage: number, totalItems: number, totalPages: number, items: [VoteProps] } = await load_data();
-
+  const baseUrl = (`${process.env.IMAGE_URL}`);
   console.log(data);
 
   return(
     <>
       <_AppShell>
-        <p>something</p>
+        <Mosaic tesserae={data.items} baseUrl={baseUrl} totalPages={data.totalPages} perPage={data.perPage}/>
       </_AppShell>
     </>
   );

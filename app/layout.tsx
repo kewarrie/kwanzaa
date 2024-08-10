@@ -9,6 +9,7 @@ import '@mantine/core/styles.css';
 import type { Metadata } from 'next';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
