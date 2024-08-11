@@ -68,7 +68,7 @@ export default function Mosaic({ tesserae, baseUrl, totalPages, perPage }: Tesse
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Grid className="container mx-auto p-4" gutter="lg" justify='center'>
             {currentItems.map((tessera) => (
-              <GridCol span={{ base:12, md:6, lg:4, xl:4 }} p={'md'} key={tessera.id}>
+              <GridCol span={{ base:12, md:4, lg:3, xl:3 }} p={'md'} key={tessera.id}>
                 <Tile tessera={tessera} baseUrl={baseUrl} />
               </GridCol>
             ))}
@@ -79,7 +79,7 @@ export default function Mosaic({ tesserae, baseUrl, totalPages, perPage }: Tesse
       <Space h={'xl'} />
 
       {/* Pagination Controls */}
-      <Group mt="lg">
+      <Group mt="lg" justify='center'>
         <Button disabled={currentPage === 1} onClick={handlePreviousPage}>
           Previous
         </Button>

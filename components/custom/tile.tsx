@@ -23,12 +23,17 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
             </Card.Section>
             {/* #TODO - Add green tick or red x depending on how they voted - pick a strategy between using a watermark, a chip on the top right of the image or displaying as bool in description area  */}
 
-            <Text size="lg" mt="md" fw={500}>
-              {tessera.full_name}
-            </Text>
+            <div style={{ height: 80 }}>
+              <Text size="lg" mt="md" fw={500}>
+                {tessera.full_name}
+              </Text>
+            </div>
+            <div style={{ height: 40 }}>
             <Text size="sm" color="dimmed">
               {tessera.represents}: {tessera.location}
             </Text>
+            </div>            
+            
           </Card>
     </div>
   );
