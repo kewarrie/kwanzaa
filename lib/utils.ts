@@ -2,11 +2,14 @@
  * VoteProps
  */
 
+
 export interface VoteProps {
+  image: any;
   id: number;
   full_name: string;
   avatar: string;
-  constituency: string;
+  location: string;
+  represents: string;
   second_reading: boolean;
   /* Pocketbase */
   collectionId: string;
