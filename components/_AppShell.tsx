@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import cx from 'clsx';
 import classes from './_AppShell.module.css';
 
-import { ActionIcon, AppShell, Burger, Group, Text, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
+import { ActionIcon, AppShell, Burger, Group, NavLink, Text, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 
