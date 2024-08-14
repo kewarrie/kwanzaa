@@ -8,15 +8,19 @@ import '@mantine/core/styles.css';
 
 import type { Metadata } from 'next';
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-
 export const metadata: Metadata = {
   title: {
-    template: '%s | K W A N Z A A',
-    default: 'K W A N Z A A',
+    template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+    default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
   description: "Makosa ya kwanza. Onyo la kwanza. Sababu ya kwanza.",
 };
+
+import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
+
+const theme = createTheme({
+  fontFamily: 'monospace',
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
@@ -25,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
         <ColorSchemeScript defaultColorScheme="light" />
       </head>
       <body>
-        <MantineProvider defaultColorScheme="light">
+        <MantineProvider theme={theme} defaultColorScheme="light">
           {children}
         </MantineProvider>
       </body>
