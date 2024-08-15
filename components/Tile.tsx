@@ -2,11 +2,11 @@
  * Component: Tile
  */
 
-"use client";
+'use client';
 
-import type { VoteProps } from "@/lib/utils";
+import type { VoteProps } from '@/lib/utils';
 
-import { Card, Image, Text } from "@mantine/core";
+import { Card, Image, Text } from '@mantine/core';
 
 interface TileProps {
   tessera: VoteProps;

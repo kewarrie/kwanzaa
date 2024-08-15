@@ -2,14 +2,14 @@
  * Component: Mosaic
  */
 
-"use client";
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
 
-import type { VoteProps } from "@/lib/utils";
+import type { VoteProps } from '@/lib/utils';
 
-import Tile from "./tile";
+import Tile from './Tile';
 import { Autocomplete, Grid, GridCol, Space, Text, Button, Group } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 
@@ -56,7 +56,7 @@ export default function Mosaic({ tesserae, baseUrl, totalPages, perPage }: Tesse
         </GridCol>
         <GridCol span={{ base: 12, md: 10, lg: 6, xl: 6 }} className="flex justify-center">
           <Autocomplete
-            placeholder='Search using name or location'
+            placeholder="Search using name or location"
             rightSection={<IconSearch />}
             value={searchQuery}
             onChange={setSearchQuery}
@@ -66,7 +66,7 @@ export default function Mosaic({ tesserae, baseUrl, totalPages, perPage }: Tesse
 
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Grid className="container mx-auto p-4" gutter="lg" justify='center'>
+          <Grid className="container mx-auto p-4" gutter="lg" justify="center">
             {currentItems.map((tessera) => (
               <GridCol span={{ base:12, md:4, lg:3, xl:3 }} p={'md'} key={tessera.id}>
                 <Tile tessera={tessera} baseUrl={baseUrl} />
@@ -79,7 +79,7 @@ export default function Mosaic({ tesserae, baseUrl, totalPages, perPage }: Tesse
       <Space h={'xl'} />
 
       {/* Pagination Controls */}
-      <Group mt="lg" justify='center'>
+      <Group mt="lg" justify="center">
         <Button disabled={currentPage === 1} onClick={handlePreviousPage}>
           Previous
         </Button>
