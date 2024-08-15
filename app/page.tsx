@@ -4,19 +4,10 @@
  * Link: https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#fetching-data-on-the-server-with-fetch
  */
 
-/**
- * Import single item props: VoteProps
- */
 import type { VoteProps } from '@/lib/utils';
 
-/**
- * Import _AppShell
- */
 import _AppShell from '@/components/_AppShell';
 
-/**
- * Import Mosaic
- */
 import Mosaic from "@/components/Mosaic";
 
 /**
