@@ -5,13 +5,12 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 import type { VoteProps } from '@/lib/utils';
-
-import Tile from './Tile';
 import { Autocomplete, Grid, GridCol, Space, Text, Button, Group } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
+
+import Tile from './Tile';
 
 interface TesseraeProps {
   tesserae: [VoteProps];

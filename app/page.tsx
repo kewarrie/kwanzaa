@@ -12,7 +12,7 @@ import type { VoteProps } from '@/lib/utils';
 /**
  * Import _AppShell
  */
-import _AppShell from '../components/_AppShell';
+import _AppShell from '@/components/_AppShell';
 
 /**
  * Import Mosaic
@@ -22,19 +22,19 @@ import Mosaic from "@/components/Mosaic";
 /**
  * Custom Function: load_data()
  * 
- * Load data from the API, a hosted instance of Pocketbase.
+ * This function loads server-side 
+ * 
+ * Load list of MPs and their respective votes from the API.
+ * The API is a hosted instance of Pocketbase.
  */
 async function load_data() {
   const res: any = await fetch(`${process.env.API_URL}`);
   if (!res.ok) {
+    // TO-DO: Handle error better visually in render fun()
     throw new Error('Failed to fetch data');
   }
   return res.json();
 }
-
-/**
- * React Render
- */
 
 export default async function Page() {
   const data: { page: number, perPage: number, totalItems: number, totalPages: number, items: [VoteProps] } = await load_data();
