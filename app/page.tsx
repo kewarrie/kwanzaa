@@ -27,7 +27,7 @@ async function load_data() {
    * API_PER_PAGE: (int) 350
    * API_SORT: (string) full_name,represents,location
    */
-  const res: any = await fetch(`${process.env.API_URL}?perPage=${process.env.API_PER_PAGE}&sort=${process.env.API_SORT}`);
+  const res: any = await fetch(`${process.env.API_URL}?perPage=${process.env.API_PER_PAGE}&sort=${process.env.API_SORT}&skipTotal=True`);
   
   if (!res.ok) {
     // TO-DO: Handle error better visually in render fun()
