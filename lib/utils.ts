@@ -2,7 +2,6 @@
  * VoteProps
  */
 
-
 export interface VoteProps {
   image: any;
   id: number;
