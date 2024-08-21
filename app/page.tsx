@@ -19,11 +19,21 @@ import Mosaic from "@/components/Mosaic";
  * The API is a hosted instance of Pocketbase.
  */
 async function load_data() {
-  const res: any = await fetch(`${process.env.API_URL}`);
+
+  /**
+   * This section loads all the application data from the API.
+   * 
+   * API_URL: (string) https://example.com
+   * API_PER_PAGE: (int) 350
+   * API_SORT: (string) full_name,represents,location
+   */
+  const res: any = await fetch(`${process.env.API_URL}?perPage=${process.env.API_PER_PAGE}&sort=${process.env.API_SORT}`);
+  
   if (!res.ok) {
     // TO-DO: Handle error better visually in render fun()
     throw new Error('Failed to fetch data');
   }
+  
   return res.json();
 }
 
