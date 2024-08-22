@@ -33,8 +33,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
       
       <AppShell.Header>
         <Group justify="space-between" h="100%" px="md">
-          <Burger opened={mobileOpened} onClick={toggleMobile} size="sm" visibleFrom="sm" />
-          <Burger opened={desktopOpened} onClick={toggleDesktop} size="sm" hiddenFrom="sm" />
+          <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
+          <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
           {/* Logo - below "sm" then above "sm" */}
           <Image src="/logo.png" width={35} height={35} className="mx-auto my-4 lg:hidden mantine-hidden-from-sm" alt={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
           <Text fz="xl" visibleFrom="md">/ w ʌ n /</Text>
