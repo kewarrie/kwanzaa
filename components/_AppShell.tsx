@@ -39,7 +39,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
           <Image src="/logo.png" width={35} height={35} className="mx-auto my-4 lg:hidden mantine-hidden-from-sm" alt={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
           <Text fz="xl" visibleFrom="md">/ w ʌ n /</Text>
           {/* End of Logo */}
-          <ActionIcon variant="light" radius="xl" aria-label="Change theme" size="xl" onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}>
+          <ActionIcon variant="light" radius="xl" aria-label="Change theme" size="lg" onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}>
             <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
             <IconMoonStars className={cx(classes.icon, classes.dark)} stroke={1.5} />
           </ActionIcon>
