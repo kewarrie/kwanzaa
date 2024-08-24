@@ -6,7 +6,7 @@
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Avatar, Card, Image, Text } from '@mantine/core';
+import { Avatar, Badge, Box, Card, Group, Space, Text } from '@mantine/core';
 
 interface TileProps {
   tessera: VoteProps;
@@ -16,20 +16,34 @@ interface TileProps {
 export default function Tile({ tessera, baseUrl }: TileProps) {
   
   return (
-    <Card shadow="md" radius="md" padding="lg" className="h-full" withBorder>
-      <Card.Section p="lg">
-        <Avatar src={`${baseUrl}/${tessera.id}/${tessera.avatar}`} alt={tessera.full_name} size="lg" />
-        <Text size="lg" mt="md" fw={500}>{tessera.full_name}</Text>
-        <Text size="sm" c="dimmed">{tessera.represents}: {tessera.location}</Text>
-        <Text size="sm" c="dimmed">VOTE: {tessera.vote}</Text>
-      </Card.Section>
-      {/* 
-        TO-DO
-        -----
-        Add green tick or red x depending on how they voted - pick a strategy
-        between using a watermark, a chip on the top right of the image or displaying
-        as bool in description area
-      */}
+    <Card radius="md" padding="lg" className="h-full" withBorder>
+      <Box mih={200} p="md">
+        <Card.Section>
+          <Group justify="space-between" align="flex-start">
+            <Avatar
+              size={100}
+              src={`${baseUrl}/${tessera.id}/${tessera.avatar}`}
+              alt={tessera.full_name}
+              name={tessera.full_name.split(/\s/).reduce((response,word)=> response+=word.slice(0,1),'')}
+            />
+            {tessera.vote === 'YES' && (<Badge variant="light" color="red" size="xl">Yes</Badge>)}
+            {tessera.vote === 'NO' && (<Badge variant="light" color="green" size="xl">No</Badge>)}
+            {tessera.vote === 'ABSENT' && (<Badge variant="light" color="blue" size="xl">ABSENT</Badge>)}
+            {tessera.vote === 'UNKOWN' && (<Badge variant="light" color="grey" size="xl">UNKOWN</Badge>)}
+            {tessera.vote === 'DECEASED' && (<Badge variant="light" color="yellow" size="xl">DECEASED</Badge>)}
+          </Group>
+        </Card.Section>
+
+        <Space h="md" />
+
+        <Card.Section>
+          <Text size="sm">{tessera.full_name}</Text>
+          {tessera.represents === 'CONSTITUENCY' && (<Text size="sm" c="dimmed" tt="uppercase">Member of Parliament</Text>)}
+          {tessera.represents === 'COUNTY' && (<Text size="sm" c="dimmed" tt="uppercase">County Woman Representative</Text>)}
+          {tessera.represents === 'NOMINATED' && (<Text size="sm" c="dimmed" tt="uppercase">Nominated</Text>)}
+          {tessera.location && (<Text size="sm" c="dimmed" tt="capitalize">{tessera.location}</Text>)}
+        </Card.Section>
+      </Box>
     </Card>
   );
 }

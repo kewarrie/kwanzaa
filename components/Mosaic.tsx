@@ -8,8 +8,8 @@ import { useState } from 'react';
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Autocomplete, Grid, Space } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
+import { Autocomplete, Grid, Space, rem } from '@mantine/core';
+import { IconUserSearch } from '@tabler/icons-react';
 
 import Tile from './Tile';
 
@@ -33,15 +33,21 @@ export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
     <>
       <Grid gutter="lg">
         <Grid.Col>
-          <Autocomplete value={searchQuery} onChange={setSearchQuery} rightSection={<IconSearch />} placeholder="Search using name or location" />
+          <Autocomplete
+            variant="filled"
+            radius="xl"
+            placeholder="Search using name, constituency or county"
+            leftSection={<IconUserSearch style={{ width: rem(16), height: rem(16) }} />}
+            value={searchQuery}
+            onChange={setSearchQuery} />
         </Grid.Col>
       </Grid>
 
-      <Space h={'xl'} />
+      <Space h="md" />
       
-      <Grid gutter="lg">
+      <Grid gutter="lg" justify="flex-start" align="stretch">
         {filteredTesserae.map((tessera) => (
-          <Grid.Col span={{ base: 12, md: 3, lg: 2, xl: 2 }} p={'md'} key={tessera.id}>
+          <Grid.Col span={{ base: 12, sm: 6, md: 4, lg: 3, xl: 2 }} p="md" key={tessera.id}>
             <Tile tessera={tessera} baseUrl={baseUrl} />
           </Grid.Col>
         ))}

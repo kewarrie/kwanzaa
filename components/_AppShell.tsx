@@ -26,7 +26,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
   
   // AppShell/Navigation Drawer
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpened, { toggle: toggleDesktop }] =useDisclosure(true);    
+  const [desktopOpened, { toggle: toggleDesktop }] =useDisclosure();    
 
   return (
     <AppShell header={{ height: 60 }} navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !mobileOpened, desktop: !desktopOpened } }} padding="md">
