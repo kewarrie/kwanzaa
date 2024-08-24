@@ -33,12 +33,7 @@ export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
     <>
       <Grid gutter="lg">
         <Grid.Col>
-          <Autocomplete
-            placeholder="Search using name or location"
-            rightSection={<IconSearch />}
-            value={searchQuery}
-            onChange={setSearchQuery}
-          />
+          <Autocomplete value={searchQuery} onChange={setSearchQuery} rightSection={<IconSearch />} placeholder="Search using name or location" />
         </Grid.Col>
       </Grid>
 
@@ -46,7 +41,7 @@ export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
       
       <Grid gutter="lg">
         {filteredTesserae.map((tessera) => (
-          <Grid.Col span={{ base:12, md:4, lg:3, xl:3 }} p={'md'} key={tessera.id}>
+          <Grid.Col span={{ base: 12, md: 3, lg: 2, xl: 2 }} p={'md'} key={tessera.id}>
             <Tile tessera={tessera} baseUrl={baseUrl} />
           </Grid.Col>
         ))}

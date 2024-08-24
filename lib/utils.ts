@@ -9,7 +9,7 @@ export interface VoteProps {
   avatar: string;
   location: string;
   represents: string;
-  second_reading: boolean;
+  vote: boolean;
   /* Pocketbase */
   collectionId: string;
   collectionName: string;

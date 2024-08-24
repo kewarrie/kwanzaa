@@ -48,7 +48,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
 
       <AppShell.Navbar p="md">
         <NavLink href="/" label="Home" active={pathname == '/'} />
-        <NavLink href="/about" label="About" />   
+        <NavLink href="/about" label="About" active={pathname == '/about'} />   
       </AppShell.Navbar>
 
       <AppShell.Main>
