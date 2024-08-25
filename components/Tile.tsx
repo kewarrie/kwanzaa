@@ -19,6 +19,20 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
     <Card radius="md" className="h-full" withBorder>
       <Stack h={200} align="stretch" justify="space-around" gap="sm">
         <Card.Section p="sm">
+          {/* Representation */}
+          {tessera.represents === 'CONSTITUENCY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Member of Parliament</Text>)}
+          {tessera.represents === 'COUNTY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">County Woman Representative</Text>)}
+          {tessera.represents === 'NOMINATED' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Nominated Representative</Text>)}
+        </Card.Section>
+
+        <Card.Section p="sm" withBorder>
+          {/* Full Name */}
+          <Center h={45}>
+            <Text ta="center">{tessera.full_name}</Text>
+          </Center>
+        </Card.Section>
+
+        <Card.Section p="sm">
           <Group justify="space-between" align="flex-start">
             {/* Elected Official Portrait */}
             <Avatar
@@ -39,20 +53,6 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
               {tessera.location ? (<Text size="sm" c="dark.3" tt="capitalize">{tessera.location}</Text>) : (<Text size="sm" c="dark.4" tt="capitalize">N/A</Text>)}
             </Stack>
           </Group>
-        </Card.Section>
-
-        <Card.Section p="sm" withBorder>
-          {/* Full Name */}
-          <Center h={45}>
-            <Text ta="center">{tessera.full_name}</Text>
-          </Center>
-        </Card.Section>
-
-        <Card.Section p="sm">
-          {/* Representation */}
-          {tessera.represents === 'CONSTITUENCY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Member of Parliament</Text>)}
-          {tessera.represents === 'COUNTY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">County Woman Representative</Text>)}
-          {tessera.represents === 'NOMINATED' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Nominated Representative</Text>)}
         </Card.Section>
       </Stack>
     </Card>
