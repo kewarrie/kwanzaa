@@ -6,7 +6,7 @@
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Avatar, Badge, Button, Center, Drawer, Card, Group, Stack, Text } from '@mantine/core';
+import { Avatar, Badge, Button, Card, Center, Drawer, Group, Image, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import { IconArrowRight, IconLayersSubtract } from '@tabler/icons-react';
@@ -16,12 +16,26 @@ interface TileProps {
   baseUrl: string;
 }
 
-function DrawerDetails() {
+function DrawerDetails({ tessera, baseUrl }: TileProps) {
   const [opened, { open, close }] = useDisclosure(false);
   return(
     <>
-      <Drawer opened={opened} onClose={close} title="Authentication">
-        {/* Drawer content */}
+      <Drawer
+        position="right"
+        opened={opened}
+        onClose={close}
+        title={(
+          <>
+            {/* Representation */}
+            {tessera.represents === 'CONSTITUENCY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Member of Parliament</Text>)}
+            {tessera.represents === 'COUNTY' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">County Woman Representative</Text>)}
+            {tessera.represents === 'NOMINATED' && (<Text size="sm" c="dimmed" tt="uppercase" ta="center">Nominated Representative</Text>)}
+            {/* Location */}
+            {tessera.location ? (<Text size="sm" c="dark.3" tt="capitalize">{tessera.location}</Text>) : (<Text size="sm" c="dark.4" tt="capitalize">N/A</Text>)}
+          </>
+        )}>
+          <Image src={`${baseUrl}/${tessera.id}/${tessera.avatar}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
+          <Text>{tessera.full_name}</Text>
       </Drawer>
       <Button
         leftSection={<IconLayersSubtract size={14} />}
@@ -79,7 +93,7 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
           </Group>
         </Card.Section>
         {/* Drawer */}
-        <DrawerDetails />
+        <DrawerDetails tessera={tessera} baseUrl={baseUrl} />
       </Stack>
     </Card>
   );
