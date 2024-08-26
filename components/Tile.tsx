@@ -6,7 +6,7 @@
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Avatar, Badge, Button, Card, Center, Drawer, Group, Image, Stack, Text } from '@mantine/core';
+import { Avatar, Badge, Button, Card, Center, Divider, Drawer, Group, Image, Space, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import { IconArrowRight, IconLayersSubtract } from '@tabler/icons-react';
@@ -35,14 +35,18 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
           </>
         )}>
           <Image src={`${baseUrl}/${tessera.id}/${tessera.avatar}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
-          <Text>{tessera.full_name}</Text>
+          <Space h="md" />
+          <Text ta="center">{tessera.full_name}</Text>
+          <Divider my="md" />
+          <Text tt="uppercase" size="xl" c="dark.2">Finance Bill 2024</Text>
+          <Text tt="capitalize" size="sm">Second Reading Vote</Text>
+          <Text size="md">{tessera.vote}</Text>
       </Drawer>
       <Button
         leftSection={<IconLayersSubtract size={14} />}
         rightSection={<IconArrowRight size={14} />}
         variant="light"
         radius="xl"
-        size="compact-md"
         color="blue.4"
         onClick={open}
       >
