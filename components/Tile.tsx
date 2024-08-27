@@ -22,6 +22,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
     <>
       <Drawer
         position="right"
+        zIndex={400}
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         opened={opened}
         onClose={close}
@@ -97,7 +98,6 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
               Report Errors
             </Button>
           </Center>
-
       </Drawer>
       <Button
         leftSection={<IconLayersSubtract size={14} />}
