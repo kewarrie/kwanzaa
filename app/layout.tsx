@@ -22,6 +22,8 @@ const theme = createTheme({
   fontFamily: 'monospace',
 });
 
+import _Affix from '@/components/_Affix';
+
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang="en">
@@ -31,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
           {children}
+          <_Affix />
         </MantineProvider>
       </body>
     </html>

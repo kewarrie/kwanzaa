@@ -6,10 +6,10 @@
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Avatar, Badge, Button, Card, Center, Divider, Drawer, Group, Image, Space, Stack, Text } from '@mantine/core';
+import { Avatar, Badge, Button, Card, Center, Divider, Drawer, Group, Image, Space, Stack, Text, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-import { IconArrowRight, IconLayersSubtract } from '@tabler/icons-react';
+import { IconArrowRight, IconClock, IconFlag2, IconLayersSubtract } from '@tabler/icons-react';
 
 interface TileProps {
   tessera: VoteProps;
@@ -22,6 +22,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
     <>
       <Drawer
         position="right"
+        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         opened={opened}
         onClose={close}
         title={(
@@ -34,23 +35,80 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
             {tessera.location ? (<Text size="sm" c="dark.3" tt="capitalize">{tessera.location}</Text>) : (<Text size="sm" c="dark.4" tt="capitalize">N/A</Text>)}
           </>
         )}>
+          {/* National Assembly Member - Headshot */}
           <Image src={`${baseUrl}/${tessera.id}/${tessera.avatar}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
+          
           <Space h="md" />
-          <Text ta="center">{tessera.full_name}</Text>
-          <Divider my="md" />
-          <Text tt="uppercase" size="xl" c="dark.2">Finance Bill 2024</Text>
-          <Text tt="capitalize" size="sm">Second Reading Vote</Text>
-          <Text size="md">{tessera.vote}</Text>
+          
+          {/* National Assembly Member - Full Name */}
+          <Text tt="uppercase" size="xs" c="dark.2">Full Name</Text>
+
+          <Space h="sm" />
+
+          <Text>{tessera.full_name}</Text>
+          
+          <Divider my="md" variant="dashed" />
+          
+          {/* Section: Finance Bill 2024 Vote */}
+          <Text tt="uppercase" size="xs" c="dark.2">Finance Bill 2024</Text>
+          
+          <Space h="sm" />
+          
+          <Group justify="space-between" align="center">
+            
+            <Text tt="capitalize" size="sm">Vote</Text>
+            
+            {tessera.vote === 'YES' && (<Badge variant="outline" color="red" size="xl">Yes</Badge>)}
+            {tessera.vote === 'NO' && (<Badge variant="outline" color="green" size="xl">No</Badge>)}
+            {tessera.vote === 'ABSENT' && (<Badge variant="outline" color="grey" size="xl">ABSENT</Badge>)}
+            {tessera.vote === 'UNKOWN' && (<Badge variant="outline" color="yellow" size="xl">UNKOWN</Badge>)}
+            {tessera.vote === 'DECEASED' && (<Badge variant="outline" color="dark" size="xl">DECEASED</Badge>)}
+
+          </Group>
+          
+          <Divider my="md" variant="dashed" />
+          
+          {/* Section: Share */}
+          <Text tt="uppercase" size="xs" c="dark.2">Affiliation</Text>
+
+          <Space h="sm" />
+
+          <Group justify="space-between" align="center">
+            
+            <Text tt="capitalize" size="sm">Political Party</Text>
+            
+            <Badge variant="light" color="dark.4" size="xl" rightSection={<IconClock style={{ width: rem(12), height: rem(12) }} />}>Coming Soon</Badge>
+
+          </Group>
+
+          <Space h={70} />
+
+          {/* Section: Report Errors */}
+          <Center>
+            <Button
+              size="compact-xs"
+              variant="light"
+              color="grey"
+              component="a"
+              href={`mailto:${process.env.NEXT_PUBLIC_APP_EMAIL}?subject=${'Kwanzaa: ' + tessera.full_name}`}
+              target="_blank"
+              rightSection={<IconFlag2 size={14} />}
+            >
+              Report Errors
+            </Button>
+          </Center>
+
       </Drawer>
       <Button
         leftSection={<IconLayersSubtract size={14} />}
         rightSection={<IconArrowRight size={14} />}
         variant="light"
         radius="xl"
+        size="md"
         color="blue.4"
         onClick={open}
       >
-        Details
+        details
       </Button>
     </>
   );

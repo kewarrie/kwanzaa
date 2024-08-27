@@ -36,8 +36,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
           <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
           <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
           {/* Logo - below "sm" then above "sm" */}
-          <Image src="/logo.png" width={35} height={35} className="mx-auto my-4 lg:hidden mantine-hidden-from-sm" alt={`${process.env.NEXT_PUBLIC_APP_NAME}`} />
-          <Text fz="xl" visibleFrom="md">/ w ʌ n /</Text>
+          <Text size="md">#RejectFinanceBill2024</Text>
           {/* End of Logo */}
           <ActionIcon variant="light" radius="xl" aria-label="Change theme" size="lg" onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}>
             <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
