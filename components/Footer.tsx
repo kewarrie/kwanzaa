@@ -12,9 +12,9 @@ export default function Footer() {
   return(
     <>
       <Center>
-        <Text size="xs" ta="center" tt="uppercase" mx="xs" inline>Made with</Text>
+        <Text size="xs" ta="center" tt="uppercase" mx="xs">Made with</Text>
         <IconHeartFilled style={{ width: rem(20), height: rem(20) }} color="red" />
-        <Text size="xs" ta="center" tt="uppercase" mx="xs" inline>in Nairobi, Kenya</Text>
+        <Text size="xs" ta="center" tt="uppercase" mx="xs">in Nairobi, Kenya</Text>
       </Center>
 
       <Divider my="lg" />
