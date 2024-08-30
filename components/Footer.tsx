@@ -19,7 +19,7 @@ export default function Footer() {
 
       <Divider my="lg" />
 
-      <Text c="dark" ta="center" tt="uppercase">{process.env.NEXT_PUBLIC_BITCOIN_ADDRESS}</Text>
+      <Text c="dark" size="sm" ta="center" tt="uppercase">{process.env.NEXT_PUBLIC_BITCOIN_ADDRESS}</Text>
     </>
   );
 }
