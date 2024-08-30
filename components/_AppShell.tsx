@@ -6,12 +6,13 @@
 
 import classes from './_AppShell.module.css';
 
+import Footer from './Footer';
+
 import cx from 'clsx';
 
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-import { ActionIcon, AppShell, Burger, Group, NavLink, Text, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
+import { ActionIcon, AppShell, Burger, Divider, Group, NavLink, Text, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks'
 
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
@@ -29,7 +30,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
   const [desktopOpened, { toggle: toggleDesktop }] =useDisclosure();    
 
   return (
-    <AppShell header={{ height: 60 }} navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !mobileOpened, desktop: !desktopOpened } }} padding="md">
+    <AppShell header={{ height: 60 }} navbar={{ width: 100, breakpoint: 'sm', collapsed: { mobile: !mobileOpened, desktop: !desktopOpened } }} padding="md">
       
       <AppShell.Header>
         <Group justify="space-between" h="100%" px="md">
@@ -46,12 +47,15 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
-        <NavLink href="/" label="Home" active={pathname == '/'} />
-        <NavLink href="/about" label="About" active={pathname == '/about'} />   
+        <NavLink href="/" label="home" ta="center" c="blue" color="blue" active={pathname == '/'} />
+        <Divider my="xl" />
+        <NavLink href="/about" label="about" ta="center" c="blue" color="blue" active={pathname == '/about'} />   
       </AppShell.Navbar>
 
       <AppShell.Main>
         {children}
+        <Divider my="xl" />
+        <Footer />
       </AppShell.Main>
       
     </AppShell>

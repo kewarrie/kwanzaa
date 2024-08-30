@@ -95,7 +95,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
               target="_blank"
               rightSection={<IconFlag2 size={14} />}
             >
-              Report Errors
+              report errors
             </Button>
           </Center>
       </Drawer>
