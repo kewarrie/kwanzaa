@@ -6,7 +6,7 @@ Sababu ya kwanza.
 
 ### Developer Set-up
 
-Create a .env.local file with the following environment variables:
+Create a `.env.local` file with the following environment variables:
 
 ```
 API_PER_PAGE=int:xxxxx
@@ -14,6 +14,7 @@ API_SORT=string:xxxxx
 API_URL=string:xxxxx
 IMAGE_URL=string:xxxxx
 NEXT_PUBLIC_APP_NAME=string:xxxxx
+NEXT_PUBLIC_APP_EMAIL=string:xxxxx
 NEXT_PUBLIC_BITCOIN_ADDRESS=string:xxxxx
 ```
 
@@ -30,7 +31,7 @@ rm -rf $HOME/.local/share/zed
 rm -rf $HOME/.local/share/applications/dev.zed.Zed.desktop
 ```
 
-Open ~/.bashrc with an Editor and delete the line: 
+Open `~/.bashrc` with an Editor and delete the line: 
 
 ```bash
 export PATH=$HOME/.local/bin:$PATH
