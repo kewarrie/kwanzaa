@@ -75,7 +75,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               aria-label="Home"
               component="a"
               href="/"
-              disabled={pathname === "/"}
+              data-disabled={pathname === "/"}
+              onClick={(event) => pathname === "/" && event.preventDefault()}
             >
               <IconSmartHome />
             </ActionIcon>
@@ -88,7 +89,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               aria-label="About"
               component="a"
               href="/about"
-              disabled={pathname === "/about"}
+              data-disabled={pathname === "/about"}
+              onClick={(event) => pathname === "/about" && event.preventDefault()}
             >
               <IconBook />
             </ActionIcon>
@@ -121,7 +123,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             aria-label="Home"
             component="a"
             href="/"
-            disabled={pathname === "/"}
+            data-disabled={pathname === "/"}
+            onClick={(event) => pathname === "/" && event.preventDefault()}
             leftSection={<IconSmartHome />}
           >
             homepage
@@ -134,7 +137,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             aria-label="About"
             component="a"
             href="/about"
-            disabled={pathname === "/about"}
+            data-disabled={pathname === "/about"}
+            onClick={(event) => pathname === "/about" && event.preventDefault()}
             leftSection={<IconBook />}
           >
             about kwanzaa
