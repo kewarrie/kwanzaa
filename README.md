@@ -16,6 +16,7 @@ IMAGE_URL=string:xxxxx
 NEXT_PUBLIC_APP_NAME=string:xxxxx
 NEXT_PUBLIC_APP_EMAIL=string:xxxxx
 NEXT_PUBLIC_BITCOIN_ADDRESS=string:xxxxx
+NEXT_PUBLIC_DISCORD_URL=string:xxxxx
 ```
 
 Happy coding!
