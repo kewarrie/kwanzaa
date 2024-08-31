@@ -9,13 +9,13 @@ import { IconArrowLeft } from '@tabler/icons-react';
 export default function Footer() {
   return(
     <>
-      <Center style={{ width: '100%', height: '20vh' }}>
+      <Center style={{ width: '100%', height: '30vh' }}>
         <Image src="/logo.png" fit="contain" width={50} height={50} alt="Logo" />
       </Center>
-      <Center style={{ width: '100%', height: '60vh' }}>
+      <Center style={{ width: '100%', height: '30vh' }}>
         <Text size="md" tt="uppercase" c="dark.4">404 &bull; page could not be found</Text>
       </Center>
-      <Center style={{ width: '100%', height: '20vh' }}>
+      <Center style={{ width: '100%', height: '10vh' }}>
         <Button component="a" href="/" variant="light" color="green" size="xs" leftSection={<IconArrowLeft />}>back to site</Button>
       </Center>
     </>
