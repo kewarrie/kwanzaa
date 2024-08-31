@@ -67,7 +67,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
         
         {/* Large Screens */}
         <Stack h="100%" align="center" justify="center" gap="xl" visibleFrom="sm">
-          <Tooltip label="Homepage" position="right" offset={30}>
+          <Tooltip label="homepage" position="right" offset={30}>
             <ActionIcon
               variant="light"
               radius="xl"
@@ -80,7 +80,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               <IconSmartHome />
             </ActionIcon>
           </Tooltip>
-          <Tooltip label="About Kwanzaa" position="right" offset={30}>
+          <Tooltip label="about kwanzaa" position="right" offset={30}>
             <ActionIcon
               variant="light"
               radius="xl"
@@ -93,7 +93,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               <IconBook />
             </ActionIcon>
           </Tooltip>
-          <Tooltip label="Join us on Discord" position="right" offset={30}>
+          <Tooltip label="join us on discord" position="right" offset={30}>
             <ActionIcon
               variant="filled"
               radius="xl"
@@ -124,7 +124,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             disabled={pathname === "/"}
             leftSection={<IconSmartHome />}
           >
-            Homepage
+            homepage
           </Button>
           <Button
             fullWidth
@@ -137,7 +137,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             disabled={pathname === "/about"}
             leftSection={<IconBook />}
           >
-            About Kwanzaa
+            about kwanzaa
           </Button>
           <Button
             fullWidth
@@ -153,7 +153,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             leftSection={<IconBrandDiscordFilled />}
             rightSection={<IconExternalLink />}
           >
-            Join us on Discord
+            join us on discord
           </Button>
         </Stack>
         {/* ENDOF Smaller Screens */}
