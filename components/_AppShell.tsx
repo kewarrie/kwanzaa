@@ -6,8 +6,6 @@
 
 import classes from './_AppShell.module.css';
 
-import Footer from './Footer';
-
 import cx from 'clsx';
 
 import { usePathname } from 'next/navigation';
@@ -17,20 +15,33 @@ import { useDisclosure } from '@mantine/hooks';
 
 import { IconBook, IconBrandDiscordFilled, IconExternalLink, IconMoonStars, IconSmartHome, IconSun } from '@tabler/icons-react';
 
+import Footer from './Footer';
+
 export default function _AppShell({ children }: { children: React.ReactNode; }) {
-  // Change app theme
+  // Allow the user to change the application theme
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
-  // Routing
+  // Get the current URL
   const pathname = usePathname();
   
-  // AppShell/Navigation Drawer
+  // _AppShell Drawer toggle
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] =useDisclosure();    
 
   return (
-    <AppShell header={{ height: 60 }} navbar={{ width: 80, breakpoint: 'sm', collapsed: { mobile: !mobileOpened, desktop: !desktopOpened } }} padding="md">
+    <AppShell
+      header={{ height: 60 }}
+      navbar={{ 
+        width: 80,
+        breakpoint: 'sm',
+        collapsed: {
+          mobile: !mobileOpened,
+          desktop: !desktopOpened 
+        }
+      }}
+      padding="md"
+    >
       
       <AppShell.Header>
         <Group justify="space-between" h="100%" px="md">
