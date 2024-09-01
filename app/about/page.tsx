@@ -7,7 +7,7 @@
 import _AppShell from '@/components/_AppShell';
 
 import { PieChart } from '@mantine/charts';
-import { Button, Center, Code, Container, Divider, Group, List, Space, Text, Title, UnstyledButton } from '@mantine/core';
+import { Button, Center, Code, Container, Divider, List, Space, Stack, Text, Title, UnstyledButton } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 
 import { IconExternalLink } from '@tabler/icons-react';
@@ -119,10 +119,10 @@ export default function Page() {
           
           <Space my="xl" />
           
-          <Group justify="space-between">
-            <Button component="a" href="https://victorianyamai.co.ke/" target="_blank" variant="subtle" color="dark" rightSection={<IconExternalLink size={14} />}>Victoria Nyamai</Button>
-            <Button component="a" href="https://marekia.com/" target="_blank" variant="subtle" color="dark" rightSection={<IconExternalLink size={14} />}>Kevin Marekia</Button>
-          </Group>
+          <Stack h={100} justify="space-around">
+            <Button tt="uppercase" component="a" href="https://victorianyamai.co.ke/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Victoria Nyamai</Button>
+            <Button tt="uppercase" component="a" href="https://marekia.com/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Kevin Marekia</Button>
+          </Stack>
 
         </Container>
       </_AppShell>
