@@ -22,13 +22,13 @@ export default function Page() {
 
           {/* About Kwanzaa */}
 
-          <Text ta="justify" my="md">
+          <Text size="sm" ta="justify" my="md">
             Following the <strong>#RejectFinanceBill2024</strong> movement, it has become apparent that the Kenyan 
             government capitalizes on our lack of awareness. In an era where misinformation can easily distort 
             public perception, we have set out to be a source of current and accurate information about government.
           </Text>
 
-          <Text ta="justify" my="md">
+          <Text size="sm" ta="justify" my="md">
             <strong>Kwanzaa</strong> was born out of a passion for civic education. Understanding our political leaders — 
             their backgrounds, policies, and contributions — is crucial for <strong>active and informed participation</strong> in 
             our democracy. By providing detailed and accurate information, we aim to bridge the gap between the electorate and 
