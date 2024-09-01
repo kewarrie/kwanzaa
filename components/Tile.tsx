@@ -63,6 +63,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
             {tessera.vote === 'NO' && (<Badge variant="outline" color="green" size="xl">No</Badge>)}
             {tessera.vote === 'ABSENT' && (<Badge variant="outline" color="grey" size="xl">ABSENT</Badge>)}
             {tessera.vote === 'UNKOWN' && (<Badge variant="outline" color="yellow" size="xl">UNKOWN</Badge>)}
+            {tessera.vote === 'UNWELL' && (<Badge variant="outline" color="orange" size="xl">UNWELL</Badge>)}
             {tessera.vote === 'DECEASED' && (<Badge variant="outline" color="dark" size="xl">DECEASED</Badge>)}
 
           </Group>
@@ -107,6 +108,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
         size="md"
         color="blue.4"
         onClick={open}
+        data-umami-event={`profile-${tessera.full_name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')}`}
       >
         details
       </Button>
@@ -148,6 +150,7 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
               {tessera.vote === 'NO' && (<Badge variant="outline" color="green" size="xl">No</Badge>)}
               {tessera.vote === 'ABSENT' && (<Badge variant="outline" color="grey" size="xl">ABSENT</Badge>)}
               {tessera.vote === 'UNKOWN' && (<Badge variant="outline" color="yellow" size="xl">UNKOWN</Badge>)}
+              {tessera.vote === 'UNWELL' && (<Badge variant="outline" color="orange" size="xl">UNWELL</Badge>)}
               {tessera.vote === 'DECEASED' && (<Badge variant="outline" color="dark" size="xl">DECEASED</Badge>)}
               {/* Location */}
               {tessera.location ? (<Text size="sm" c="dark.3" tt="capitalize">{tessera.location}</Text>) : (<Text size="sm" c="dark.4" tt="capitalize">N/A</Text>)}

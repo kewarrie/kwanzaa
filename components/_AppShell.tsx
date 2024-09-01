@@ -77,6 +77,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               href="/"
               data-disabled={pathname === "/"}
               onClick={(event) => pathname === "/" && event.preventDefault()}
+              data-umami-event="page-home-desktop"
             >
               <IconSmartHome />
             </ActionIcon>
@@ -91,6 +92,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               href="/about"
               data-disabled={pathname === "/about"}
               onClick={(event) => pathname === "/about" && event.preventDefault()}
+              data-umami-event="page-about-desktop"
             >
               <IconBook />
             </ActionIcon>
@@ -125,6 +127,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             href="/"
             data-disabled={pathname === "/"}
             onClick={(event) => pathname === "/" && event.preventDefault()}
+            data-umami-event="page-home-mobile"
             leftSection={<IconSmartHome />}
           >
             homepage
@@ -139,6 +142,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             href="/about"
             data-disabled={pathname === "/about"}
             onClick={(event) => pathname === "/about" && event.preventDefault()}
+            data-umami-event="page-about-mobile"
             leftSection={<IconBook />}
           >
             about kwanzaa

@@ -5,6 +5,9 @@
  */
 
 import '@mantine/core/styles.css';
+import '@mantine/charts/styles.css';
+
+import Script from 'next/script';
 
 import type { Metadata } from 'next';
 
@@ -36,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
           <_Affix />
         </MantineProvider>
       </body>
+      <Script src={process.env.NEXT_PUBLIC_ANALYTICS_SITE_URL} data-website-id={process.env.NEXT_PUBLIC_ANALYTICS_DATA_WEBSITE_ID} />
     </html>
   );
 }
