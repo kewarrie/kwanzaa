@@ -7,14 +7,10 @@
 import _AppShell from '@/components/_AppShell';
 
 import { PieChart } from '@mantine/charts';
-import { Button, Center, Code, Container, Divider, List, Space, Stack, Text, Title, UnstyledButton } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
-
+import { Button, Center, Code, Container, Divider, List, Space, Text, Title, UnstyledButton } from '@mantine/core';
 import { IconExternalLink } from '@tabler/icons-react';
 
 export default function Page() {
-  const colorScheme = useColorScheme();
-
   return(
     <>
       <_AppShell>
@@ -27,28 +23,16 @@ export default function Page() {
           {/* About Kwanzaa */}
 
           <Text ta="justify" my="md">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque varius orci 
-            sed aliquam. Vestibulum orci metus, pellentesque quis lobortis vel, tincidunt sit amet 
-            lorem. Aenean fringilla, sapien sit amet sollicitudin commodo, sapien justo iaculis 
-            nulla, sit amet sollicitudin enim eros sit amet urna.
+            Following the <strong>#RejectFinanceBill2024</strong> movement, it has become apparent that the Kenyan 
+            government capitalizes on our lack of awareness. In an era where misinformation can easily distort 
+            public perception, we have set out to be a source of current and accurate information about government.
           </Text>
 
           <Text ta="justify" my="md">
-            Praesent ultricies nisi in turpis ornare tincidunt. Sed lectus lorem, elementum in velit 
-            in, consequat maximus justo. 
-          </Text>
-
-          <Text ta="justify" my="md">
-            Nullam leo metus, aliquet in orci sit amet, efficitur suscipit nunc. Integer ac porttitor 
-            eros. Etiam laoreet, nibh non suscipit venenatis, justo erat suscipit enim, quis suscipit 
-            dui odio at est. Nullam fringilla elit sit amet luctus mollis. 
-          </Text>
-
-          <Text ta="justify" my="md">
-            Cras porttitor nisi et nisi tristique sagittis. Nam in libero eleifend, gravida nunc pulvinar, 
-            congue nibh. Maecenas egestas semper convallis. Integer felis metus, rutrum sit amet consequat 
-            ac, facilisis ac ante. Curabitur id metus scelerisque massa dignissim vestibulum. Sed fermentum 
-            a velit at hendrerit.
+            <strong>Kwanzaa</strong> was born out of a passion for civic education. Understanding our political leaders — 
+            their backgrounds, policies, and contributions — is crucial for <strong>active and informed participation</strong> in 
+            our democracy. By providing detailed and accurate information, we aim to bridge the gap between the electorate and 
+            those who represent them, empowering every Kenyan to engage meaningfully in the political process.
           </Text>
           
           {/* END OF About Kwanzaa */}
@@ -141,4 +125,4 @@ export default function Page() {
       </_AppShell>
     </>
   );
-  }
+}
