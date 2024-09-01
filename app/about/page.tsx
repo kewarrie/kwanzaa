@@ -78,7 +78,7 @@ export default function Page() {
             />
           </Center>
           <Text ta="center" my="xs" size="xs">
-            Fig. 1: Finance Bill 2024 Vote Distribution.
+            Fig. 1: Tap to view the Finance Bill 2024 vote distribution.
           </Text>
           
           <Divider my="xl" />
@@ -112,17 +112,30 @@ export default function Page() {
             All the information featured on this website is available in the public domain; including 
             the names, images, votes cast and political parties of the featured Members of Parliament.
           </Text>
+
+          <Space my="md" />
           
+          <Text ta="justify" my="md" size="sm">
+            The site does not use cookies and does not collect any personally identifiable information. 
+            For analytics purposes, events e.g. button clicks, are tracked anonymously. Users cannot be 
+            identified and are never tracked across websites.
+          </Text>
+          
+          <Space my="md" />
+
+          <Button fullWidth tt="uppercase" component="a" href={process.env.NEXT_PUBLIC_ANALYTICS_SHARE_URL} target="_blank" variant="light" rightSection={<IconExternalLink size={14} />}>View Site Analytics</Button>
+
           <Divider my="xl" />
           
           <Title c="dark.2" size="sm" tt="uppercase" ta="center" order={3}>Site By</Title>
           
-          <Space my="xl" />
+          <Space my="md" />
+
+          <Button fullWidth tt="uppercase" component="a" href="https://victorianyamai.co.ke/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Victoria Nyamai</Button>
           
-          <Stack h={100} justify="space-around">
-            <Button tt="uppercase" component="a" href="https://victorianyamai.co.ke/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Victoria Nyamai</Button>
-            <Button tt="uppercase" component="a" href="https://marekia.com/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Kevin Marekia</Button>
-          </Stack>
+          <Text ta="center" fs="italic" my="xs" size="sm">&amp;</Text>
+          
+          <Button fullWidth tt="uppercase" component="a" href="https://marekia.com/" target="_blank" variant="light" c="black" color="green" rightSection={<IconExternalLink size={14} />}>Kevin Marekia</Button>
 
         </Container>
       </_AppShell>
