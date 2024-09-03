@@ -1,5 +1,11 @@
 /**
  * Component: Tile
+ * 
+ * 
+ * The images in this component have been optimized using Cloudflare.
+ *  
+ * Cloudflare Image Transformation Docs: https://developers.cloudflare.com/images/transform-images/transform-via-url/
+ * Next.js Custom Loader Docs: https://nextjs.org/docs/pages/api-reference/components/image#loader
  */
 
 'use client';
@@ -16,8 +22,19 @@ interface TileProps {
   baseUrl: string;
 }
 
+/**
+ * function normalizeSrc
+ * 
+ * Helper function that strips the extra '/' in 'https://'.
+ * The function is used in the image optimization logic.
+ */
+const normalizeSrc = (src: string) => {
+  return src.startsWith('/') ? src.slice(1) : src;
+};
+
 function DrawerDetails({ tessera, baseUrl }: TileProps) {
   const [opened, { open, close }] = useDisclosure(false);
+  
   return(
     <>
       <Drawer
@@ -37,8 +54,8 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
           </>
         )}>
           {/* National Assembly Member - Headshot */}
-          <Image src={`${baseUrl}/${tessera.id}/${tessera.avatar}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
-          
+          <Image src={`https://${process.env.NEXT_PUBLIC_ZONE}/cdn-cgi/image/w=500,quality=100/${normalizeSrc(`${baseUrl}/${tessera.id}/${tessera.avatar}`)}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
+
           <Space h="md" />
           
           {/* National Assembly Member - Full Name */}
@@ -139,7 +156,8 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
             {/* Elected Official Portrait */}
             <Avatar
               size={60}
-              src={`${baseUrl}/${tessera.id}/${tessera.avatar}`}
+              // src={`${baseUrl}/${tessera.id}/${tessera.avatar}`}
+              src={`https://${process.env.NEXT_PUBLIC_ZONE}/cdn-cgi/image/w=100,quality=75/${normalizeSrc(`${baseUrl}/${tessera.id}/${tessera.avatar}`)}`}
               alt={tessera.full_name}
               name={tessera.full_name}
               color="initials"
