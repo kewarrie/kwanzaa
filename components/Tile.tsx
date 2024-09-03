@@ -6,6 +6,10 @@
  *  
  * Cloudflare Image Transformation Docs: https://developers.cloudflare.com/images/transform-images/transform-via-url/
  * Next.js Custom Loader Docs: https://nextjs.org/docs/pages/api-reference/components/image#loader
+ * 
+ * NOTE: Ensure that the PUBLIC_ZONE URL's A record is not only managed
+ * by Cloudflare but also has proxied turned on. This is how to get Image
+ * Transfomations working.
  */
 
 'use client';
@@ -100,11 +104,12 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
 
           </Group>
 
-          <Space h={70} />
+          <Space h={50} />
 
           {/* Section: Report Errors */}
           <Center>
             <Button
+              m="md"
               size="compact-xs"
               variant="light"
               color="grey"
@@ -156,7 +161,6 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
             {/* Elected Official Portrait */}
             <Avatar
               size={60}
-              // src={`${baseUrl}/${tessera.id}/${tessera.avatar}`}
               src={`https://${process.env.NEXT_PUBLIC_ZONE}/cdn-cgi/image/w=100,quality=75/${normalizeSrc(`${baseUrl}/${tessera.id}/${tessera.avatar}`)}`}
               alt={tessera.full_name}
               name={tessera.full_name}
