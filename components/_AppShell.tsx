@@ -45,8 +45,8 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
       
       <AppShell.Header>
         <Group justify="space-between" h="100%" px="md">
-          <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
-          <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
+          <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" aria-label="Toggle navigation" />
+          <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" aria-label="Toggle navigation" />
           <Text size="md">#RejectFinanceBill2024</Text>
           <ActionIcon
             variant="light"
