@@ -23,6 +23,9 @@ import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
 
 const theme = createTheme({
   fontFamily: 'monospace',
+  breakpoints: {
+    xl: '110em',
+  },
 });
 
 import _Affix from '@/components/_Affix';
