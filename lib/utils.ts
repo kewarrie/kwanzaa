@@ -10,6 +10,7 @@ export interface VoteProps {
   location: string;
   represents: string;
   vote: string;
+  political_party: string;
   /* Pocketbase */
   collectionId: string;
   collectionName: string;
