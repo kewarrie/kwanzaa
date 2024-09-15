@@ -72,13 +72,13 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
           <Divider my="md" variant="dashed" />
           
           {/* Section: Finance Bill 2024 Vote */}
-          <Text tt="uppercase" size="xs" c="dark.2">Finance Bill 2024</Text>
+          <Text tt="uppercase" size="xs" c="dark.2">Finance Bill 2024, Second Reading</Text>
           
           <Space h="sm" />
           
           <Group justify="space-between" align="center">
             
-            <Text tt="capitalize" size="sm">Vote</Text>
+            <Text>Vote</Text>
             
             {tessera.vote === 'YES' && (<Badge variant="outline" color="red" size="xl">Yes</Badge>)}
             {tessera.vote === 'NO' && (<Badge variant="outline" color="green" size="xl">No</Badge>)}
@@ -92,17 +92,11 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
           <Divider my="md" variant="dashed" />
           
           {/* Section: Share */}
-          <Text tt="uppercase" size="xs" c="dark.2">Affiliation</Text>
+          <Text tt="uppercase" size="xs" c="dark.2">Political Party</Text>
 
           <Space h="sm" />
 
-          <Group justify="space-between" align="center">
-            
-            <Text tt="capitalize" size="sm">Political Party</Text>
-            
-            <Badge variant="light" color="dark.4" size="xl" rightSection={<IconClock style={{ width: rem(12), height: rem(12) }} />}>Coming Soon</Badge>
-
-          </Group>
+          <Text>{tessera.political_party}</Text>
 
           <Space h={50} />
 
