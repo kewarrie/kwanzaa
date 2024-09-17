@@ -2,20 +2,27 @@
  * Page: Error 404
  */
 
+import type { Metadata } from 'next'
+
 import { Button, Center, Image, Text } from '@mantine/core';
 
 import { IconArrowLeft } from '@tabler/icons-react';
 
-export default function Footer() {
+export const metadata: Metadata = {
+  title: '404',
+  description: 'page could not be found',
+}
+
+export default function Page() {
   return(
     <>
-      <Center style={{ width: '100%', height: '30vh' }}>
+      <Center style={{ width: '100%', height: '33vh' }}>
         <Image src="/logo.png" fit="contain" width={50} height={50} alt="Logo" />
       </Center>
-      <Center style={{ width: '100%', height: '30vh' }}>
-        <Text size="md" tt="uppercase" c="dark.4">404 &bull; page could not be found</Text>
+      <Center style={{ width: '100%', height: '33vh' }}>
+        <Text size="md" c="dark.4">sorry, page could not be found.</Text>
       </Center>
-      <Center style={{ width: '100%', height: '10vh' }}>
+      <Center style={{ width: '100%', height: '33vh' }}>
         <Button component="a" href="/" variant="light" color="green" size="xs" leftSection={<IconArrowLeft />}>back to site</Button>
       </Center>
     </>
