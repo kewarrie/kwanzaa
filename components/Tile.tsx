@@ -86,6 +86,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
             {tessera.vote === 'UNKOWN' && (<Badge variant="outline" color="yellow" size="xl">UNKOWN</Badge>)}
             {tessera.vote === 'UNWELL' && (<Badge variant="outline" color="orange" size="xl">UNWELL</Badge>)}
             {tessera.vote === 'DECEASED' && (<Badge variant="outline" color="dark" size="xl">DECEASED</Badge>)}
+            {tessera.vote === 'NULLIFIED' && (<Badge variant="outline" color="dark" size="xl">NULLIFIED</Badge>)}
 
           </Group>
           
@@ -168,6 +169,7 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
               {tessera.vote === 'UNKOWN' && (<Badge variant="outline" color="yellow" size="xl">UNKOWN</Badge>)}
               {tessera.vote === 'UNWELL' && (<Badge variant="outline" color="orange" size="xl">UNWELL</Badge>)}
               {tessera.vote === 'DECEASED' && (<Badge variant="outline" color="dark" size="xl">DECEASED</Badge>)}
+              {tessera.vote === 'NULLIFIED' && (<Badge variant="outline" color="dark" size="xl">NULLIFIED</Badge>)}
               {/* Location */}
               {tessera.location ? (<Text size="sm" c="dark.3" tt="capitalize">{tessera.location}</Text>) : (<Text size="sm" c="dark.4" tt="capitalize">N/A</Text>)}
             </Stack>
