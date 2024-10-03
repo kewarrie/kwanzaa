@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
-  description: "Makosa ya kwanza. Onyo la kwanza. Sababu ya kwanza.",
+  description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
 };
 
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
