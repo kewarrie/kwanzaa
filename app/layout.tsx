@@ -12,14 +12,13 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITE_URL}`),
   title: {
     template: `${process.env.NEXT_PUBLIC_APP_NAME} — %s`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
   description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
   openGraph: {
-    images: '/opengraph-image.png',
+    images: `${process.env.NEXT_PUBLIC_OG_IMAGE_URL}`,
   },
 };
 
