@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
   description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
+  openGraph: {
+    images: '/opengraph-image.png',
+  },
 };
 
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
