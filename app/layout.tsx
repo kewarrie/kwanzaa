@@ -13,7 +13,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+    template: `${process.env.NEXT_PUBLIC_APP_NAME} — %s`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
   description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
