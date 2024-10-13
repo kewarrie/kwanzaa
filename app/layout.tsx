@@ -12,14 +12,12 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kwanzaa.kura.co.ke'),
   title: {
     template: `${process.env.NEXT_PUBLIC_APP_NAME} — %s`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
   description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
-  openGraph: {
-    images: `${process.env.NEXT_PUBLIC_OG_IMAGE_URL}`,
-  },
 };
 
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
