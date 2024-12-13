@@ -77,7 +77,7 @@ export default function Page() {
 
           <Text ta="justify" my="md" size="sm">
             For corrections, please use the <Code>report errors</Code> button available on each 
-            featured profile. Corrections shall be made within 48 hours.
+            featured profile.
           </Text>
           
           <Divider my="xl" />
