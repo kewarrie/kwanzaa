@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 /**
  * Page: About
  */
@@ -122,3 +120,5 @@ export default function Page() {
     </>
   );
 }
+
+export const runtime = 'edge';

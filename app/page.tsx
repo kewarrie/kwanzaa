@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 /**
  * Root Page
  * 
@@ -51,3 +49,5 @@ export default async function Page() {
     </>
   );
 }
+
+export const runtime = 'edge';
