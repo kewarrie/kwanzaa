@@ -1,15 +1,5 @@
 /**
  * Component: Tile
- * 
- * 
- * The images in this component have been optimized using Cloudflare.
- *  
- * Cloudflare Image Transformation Docs: https://developers.cloudflare.com/images/transform-images/transform-via-url/
- * Next.js Custom Loader Docs: https://nextjs.org/docs/pages/api-reference/components/image#loader
- * 
- * NOTE: Ensure that the PUBLIC_ZONE URL's A record is not only managed
- * by Cloudflare but also has proxied turned on. This is how to get Image
- * Transfomations working.
  */
 
 'use client';
@@ -58,7 +48,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
           </>
         )}>
           {/* National Assembly Member - Headshot */}
-          <Image src={`https://${process.env.NEXT_PUBLIC_ZONE}/cdn-cgi/image/w=500,quality=100/${normalizeSrc(`${baseUrl}/${tessera.id}/${tessera.avatar}`)}`} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
+          <Image src={tessera.r2} alt={tessera.full_name} radius="md" style={{ objectPosition: 'top' }} />
 
           <Space h="md" />
           
@@ -156,7 +146,7 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
             {/* Elected Official Portrait */}
             <Avatar
               size={60}
-              src={`https://${process.env.NEXT_PUBLIC_ZONE}/cdn-cgi/image/w=100,quality=75/${normalizeSrc(`${baseUrl}/${tessera.id}/${tessera.avatar}`)}`}
+              src={tessera.r2}
               alt={tessera.full_name}
               name={tessera.full_name}
               color="initials"
