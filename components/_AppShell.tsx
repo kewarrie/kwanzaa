@@ -53,8 +53,6 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             radius="xl"
             size="lg"
             aria-label="Change theme"
-            c={computedColorScheme === 'light' ? 'purple' : 'yellow'}
-            color={computedColorScheme === 'light' ? 'purple' : 'yellow'}
             onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
           >
             <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
