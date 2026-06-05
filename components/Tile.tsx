@@ -4,6 +4,8 @@
 
 'use client';
 
+import { memo } from 'react';
+
 import type { VoteProps } from '@/lib/utils';
 
 import { Avatar, Badge, Button, Card, Center, Divider, Drawer, Group, Image, Space, Stack, Text, rem } from '@mantine/core';
@@ -123,7 +125,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
   );
 }
 
-export default function Tile({ tessera, baseUrl }: TileProps) {
+function Tile({ tessera, baseUrl }: TileProps) {
   return (
     <Card radius="md" className="h-full" withBorder>
       <Stack h={250} align="stretch" justify="space-around" gap="sm">
@@ -171,3 +173,5 @@ export default function Tile({ tessera, baseUrl }: TileProps) {
     </Card>
   );
 }
+
+export default memo(Tile);
