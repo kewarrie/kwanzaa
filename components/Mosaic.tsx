@@ -8,7 +8,8 @@ import { useState } from 'react';
 
 import type { VoteProps } from '@/lib/utils';
 
-import { Autocomplete, Grid, Space, rem } from '@mantine/core';
+import { Grid, Space, TextInput, rem } from '@mantine/core';
+import { useDebouncedValue } from '@mantine/hooks';
 import { IconUserSearch } from '@tabler/icons-react';
 
 import Tile from './Tile';
@@ -22,24 +23,26 @@ interface TesseraeProps {
 
 export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [debounced] = useDebouncedValue(searchQuery, 500);
 
   // Filtered tesserae based on the search query
   const filteredTesserae = tesserae.filter(tessera => 
-    tessera.location.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    tessera.full_name.toLowerCase().includes(searchQuery.toLowerCase())
+    tessera.location.toLowerCase().includes(debounced.toLowerCase()) || 
+    tessera.full_name.toLowerCase().includes(debounced.toLowerCase())
   );
 
   return (
     <>
       <Grid gutter="lg">
         <Grid.Col>
-          <Autocomplete
+          <TextInput
             variant="filled"
             radius="xl"
             placeholder="Search using name, constituency or county"
             leftSection={<IconUserSearch style={{ width: rem(16), height: rem(16) }} />}
             value={searchQuery}
-            onChange={setSearchQuery} />
+            onChange={(event) => setSearchQuery(event.currentTarget.value)}
+          />
         </Grid.Col>
       </Grid>
 
