@@ -1,8 +1,6 @@
-# K W A N Z A A
+# #RejectFinanceBill2024
 
-Makosa ya kwanza.
-Onyo la kwanza.
-Sababu ya kwanza.
+This project was born out of a passion for civic education. Understanding our political leaders — their backgrounds, policies, and contributions — is crucial for active and informed participation in our democracy. By providing detailed and accurate information, we aim to bridge the gap between the electorate and those who represent them, empowering every Kenyan to engage meaningfully in the political process.
 
 ### Developer Set-up
 
@@ -20,7 +18,6 @@ NEXT_PUBLIC_APP_NAME=string:xxxxx
 NEXT_PUBLIC_APP_EMAIL=string:xxxxx
 NEXT_PUBLIC_BITCOIN_ADDRESS=string:xxxxx
 NEXT_PUBLIC_DISCORD_URL=string:xxxxx
-NEXT_PUBLIC_ZONE=string:xxxxx
 ```
 
 Happy coding!

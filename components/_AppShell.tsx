@@ -80,7 +80,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
               <IconSmartHome />
             </ActionIcon>
           </Tooltip>
-          <Tooltip label="about kwanzaa" position="right" offset={30}>
+          <Tooltip label="about" position="right" offset={30}>
             <ActionIcon
               variant="light"
               radius="xl"
@@ -143,7 +143,7 @@ export default function _AppShell({ children }: { children: React.ReactNode; }) 
             data-umami-event="page-about-mobile"
             leftSection={<IconBook />}
           >
-            about kwanzaa
+            about
           </Button>
           <Button
             fullWidth
