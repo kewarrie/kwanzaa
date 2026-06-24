@@ -16,20 +16,20 @@ export default function Page() {
       <_AppShell>
         <Container px={0} size="30rem">
           
-          <Title c="dark.2" order={1}>about kwanzaa</Title>
+          <Title c="dark.2" order={1}>about</Title>
           
           <Space my="md" />
 
-          {/* About Kwanzaa */}
+          {/* About #RejectFinanceBill2024 */}
 
           <Text size="sm" ta="justify" my="md">
-            <strong>Kwanzaa</strong> was born out of a passion for civic education. Understanding our political leaders — 
+            <strong>#RejectFinanceBill2024</strong> was born out of a passion for civic education. Understanding our political leaders — 
             their backgrounds, policies, and contributions — is crucial for <strong>active and informed participation</strong> in 
             our democracy. By providing detailed and accurate information, we aim to bridge the gap between the electorate and 
             those who represent them, empowering every Kenyan to engage meaningfully in the political process.
           </Text>
           
-          {/* END OF About Kwanzaa */}
+          {/* END OF About #RejectFinanceBill2024 */}
           
           <Divider my="xl" />
           

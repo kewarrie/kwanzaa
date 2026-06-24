@@ -12,7 +12,7 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kwanzaa.kura.co.ke'),
+  metadataBase: new URL('https://coronavirus.info.ke'),
   title: {
     template: `${process.env.NEXT_PUBLIC_APP_NAME} — %s`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
