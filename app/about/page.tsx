@@ -46,12 +46,8 @@ export default function Page() {
               withTooltip
               size={200}
               data={[
-                { name: 'Yes', value: 197, color: 'red' },
-                { name: 'No', value: 114, color: 'green' },
-                { name: 'Absent', value: 21, color: 'grey' },
-                { name: 'Uknown', value: 15, color: 'yellow' },
-                { name: 'Unwell', value: 1, color: 'orange' },
-                { name: 'Deceased', value: 1, color: 'dark' },
+                { name: 'Yes', value: 204, color: 'red' },
+                { name: 'No', value: 115, color: 'green' },
               ]}
             />
           </Center>
@@ -66,10 +62,11 @@ export default function Page() {
           <Space my="md" />
           
           <Text ta="justify" my="md" size="sm">
-            The data on this site has been collated from the following public sources:
+            The data on this site has been collated from the following public sources and is reported as is:
           </Text>
 
           <List size="sm">
+              <List.Item>KBC <UnstyledButton component="a" href="https://www.kbc.co.ke/how-mps-voted-for-the-finance-bill-2024/" target="_blank" td="underline">reporting</UnstyledButton> on how MPs voted for the Finance Bill 2024</List.Item>
               <List.Item>@MzalendoWatch's <UnstyledButton component="a" href="https://x.com/MzalendoWatch/status/1803782515120873578" target="_blank" td="underline">thread</UnstyledButton> on X;</List.Item>
               <List.Item>The Parliament <UnstyledButton component="a" href="http://parliament.go.ke/" target="_blank" td="underline">website</UnstyledButton>; and</List.Item>
               <List.Item>The public social media profiles of the respective Members of Parliament, e.g. Facebook, Twitter, etc.</List.Item>
