@@ -66,7 +66,7 @@ export default function Page() {
           </Text>
 
           <List size="sm">
-              <List.Item>KBC <UnstyledButton component="a" href="https://www.kbc.co.ke/how-mps-voted-for-the-finance-bill-2024/" target="_blank" td="underline">reporting</UnstyledButton> on how MPs voted for the Finance Bill 2024</List.Item>
+              <List.Item>KBC <UnstyledButton component="a" href="https://web.archive.org/web/20240621135019/https://www.kbc.co.ke/how-mps-voted-for-the-finance-bill-2024/" target="_blank" td="underline">reporting</UnstyledButton> on how MPs voted for the Finance Bill 2024;</List.Item>
               <List.Item>@MzalendoWatch's <UnstyledButton component="a" href="https://x.com/MzalendoWatch/status/1803782515120873578" target="_blank" td="underline">thread</UnstyledButton> on X;</List.Item>
               <List.Item>The Parliament <UnstyledButton component="a" href="http://parliament.go.ke/" target="_blank" td="underline">website</UnstyledButton>; and</List.Item>
               <List.Item>The public social media profiles of the respective Members of Parliament, e.g. Facebook, Twitter, etc.</List.Item>
