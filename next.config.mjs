@@ -5,9 +5,15 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 export default withBundleAnalyzer({
+  output: 'export',
+
   reactStrictMode: false,
+
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
-  turbopack: {},
+
+  images: {
+    unoptimized: true,
+  },
 });
