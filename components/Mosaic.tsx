@@ -16,12 +16,11 @@ import Tile from './Tile';
 
 interface TesseraeProps {
   tesserae: [VoteProps];
-  baseUrl: string;
   totalPages?: number;
   perPage?: number;
 }
 
-export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
+export default function Mosaic({ tesserae }: TesseraeProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [debounced] = useDebouncedValue(searchQuery, 500);
 
@@ -51,7 +50,7 @@ export default function Mosaic({ tesserae, baseUrl }: TesseraeProps) {
       <Grid gutter="lg" justify="flex-start" align="stretch">
         {filteredTesserae.map((tessera) => (
           <Grid.Col span={{ base: 12, sm: 6, md: 4, lg: 3, xl: 2 }} p="md" key={tessera.id}>
-            <Tile tessera={tessera} baseUrl={baseUrl} />
+            <Tile tessera={tessera} />
           </Grid.Col>
         ))}
       </Grid>

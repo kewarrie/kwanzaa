@@ -39,12 +39,11 @@ async function load_data() {
 
 export default async function Page() {
   const data: { page: number, perPage: number, totalItems: number, totalPages: number, items: [VoteProps] } = await load_data();
-  const baseUrl = (`${process.env.IMAGE_URL}`);
 
   return(
     <>
       <_AppShell>
-        <Mosaic tesserae={data.items} baseUrl={baseUrl} totalPages={data.totalPages} perPage={data.perPage}/>
+        <Mosaic tesserae={data.items} totalPages={data.totalPages} perPage={data.perPage}/>
       </_AppShell>
     </>
   );
