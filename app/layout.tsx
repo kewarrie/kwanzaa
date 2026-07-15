@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `${process.env.NEXT_PUBLIC_APP_NAME} — %s`,
     default: `${process.env.NEXT_PUBLIC_APP_NAME}`,
   },
-  description: "Civic Education on the Finance Bill 2024 Second Reading held on Tuesday, 25 June 2024.",
+  description: "Civic Education on the Finance Bill 2024 Second Reading held on Thursday, 20 June 2024.",
 };
 
 import { ColorSchemeScript, createTheme, MantineProvider } from '@mantine/core';
