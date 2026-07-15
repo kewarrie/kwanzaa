@@ -15,7 +15,6 @@ import { IconArrowRight, IconClock, IconFlag2, IconLayersSubtract } from '@table
 
 interface TileProps {
   tessera: VoteProps;
-  baseUrl: string;
 }
 
 /**
@@ -28,7 +27,7 @@ const normalizeSrc = (src: string) => {
   return src.startsWith('/') ? src.slice(1) : src;
 };
 
-function DrawerDetails({ tessera, baseUrl }: TileProps) {
+function DrawerDetails({ tessera }: TileProps) {
   const [opened, { open, close }] = useDisclosure(false);
   
   return(
@@ -125,7 +124,7 @@ function DrawerDetails({ tessera, baseUrl }: TileProps) {
   );
 }
 
-function Tile({ tessera, baseUrl }: TileProps) {
+function Tile({ tessera }: TileProps) {
   return (
     <Card radius="md" className="h-full" withBorder>
       <Stack h={250} align="stretch" justify="space-around" gap="sm">
@@ -168,7 +167,7 @@ function Tile({ tessera, baseUrl }: TileProps) {
           </Group>
         </Card.Section>
         {/* Drawer */}
-        <DrawerDetails tessera={tessera} baseUrl={baseUrl} />
+        <DrawerDetails tessera={tessera} />
       </Stack>
     </Card>
   );

@@ -10,7 +10,6 @@ Create a `.env.local` file with the following environment variables:
 API_PER_PAGE=int:xxxxx
 API_SORT=string:xxxxx
 API_URL=string:xxxxx
-IMAGE_URL=string:xxxxx
 NEXT_PUBLIC_ANALYTICS_DATA_WEBSITE_ID=string:xxxxx
 NEXT_PUBLIC_ANALYTICS_SHARE_URL=string:xxxxx
 NEXT_PUBLIC_ANALYTICS_SITE_URL=string:xxxxx
