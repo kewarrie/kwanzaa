@@ -1,13 +1,18 @@
-import bundleAnalyzer from '@next/bundle-analyzer';
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
 
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
-
-export default withBundleAnalyzer({
   reactStrictMode: false,
+
+  images: {
+    unoptimized: true,
+  },
+
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+
   turbopack: {},
-});
+};
+
+export default nextConfig;
