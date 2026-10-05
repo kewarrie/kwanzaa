@@ -100,7 +100,7 @@ function DrawerDetails({ tessera }: TileProps) {
               variant="light"
               color="grey"
               component="a"
-              href={`mailto:${process.env.NEXT_PUBLIC_APP_EMAIL}?subject=${'Kwanzaa: ' + tessera.full_name}`}
+              href={`mailto:${process.env.NEXT_PUBLIC_APP_EMAIL}?subject=${tessera.full_name}`}
               target="_blank"
               rightSection={<IconFlag2 size={14} />}
             >
